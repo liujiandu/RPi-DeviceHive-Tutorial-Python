@@ -8,10 +8,18 @@ Tutorial is based on example located at http://www.devicehive.com/samples/python
 ================
 Assemble Circuit
 ================
+<ol>
+<li>Please see diagram at the top of http://www.devicehive.com/samples/python-and-raspberry-pi-temperature-sensor</li>
+</ol>
 ======================
 Configure Raspberry Pi
 ======================
 <ol>
+<li>Make sure you have the latest packages installed on the Pi</li>
+<pre class="code-text-only" style="display: none;">
+<code>sudo apt-get update</code>
+<code>sudo apt-get upgrade</code>
+</pre>
 <li>Load 1-wire kernel modules that come pre-installed but not loaded:</li>
 <pre class="code-text-only" style="display: none;">
 <code>sudo modprobe w1-gpio</code>
@@ -55,7 +63,7 @@ Create Client App
 =================
 <ol>
 <li>Login to the DeviceHive administrative console. Go to the Users tab and create new user of the Client role. Click on the Networks button for this user and grant access to the your device network.</li>
-<li>Now, it’s time for the actual client app. Let’s use JavaScript. The client sample code to match your installation of playground. For example go to ~/examples/RasPiClient of the JavaScript repository.</li>
+<li>Now, it’s time for the actual client app. Let’s use JavaScript. The client sample code to match your installation of playground. For example go to ~/examples/RasPiClient.</li>
 <li>Open index.html file. Find the line where new DeviceHive instance is created and insert your assigned DeviceHive service URL; login and password of the client user you created on step 1. As a result, it should look like the following:</li>
 <pre class="code-text-only" style="display: none;">
 <code>var deviceHive = new DeviceHive("http://yourinstance.pg.devicehive.com/api", "myclientuser", "mypassword");</code>
