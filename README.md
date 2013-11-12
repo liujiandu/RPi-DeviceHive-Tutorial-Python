@@ -25,7 +25,24 @@ Configure Raspberry Pi
 <code>sudo modprobe w1-gpio</code>
 <code>sudo modprobe w1_therm</code>
 </pre>
-<li>Add lines w1-gpio and w1_therm into /etc/modules using sudo nano /etc/modules so they get loaded automatically next time you restart it.</li>
+<li>Add lines <b>w1-gpio</b> and <b>w1_therm</b> into <b>/etc/modules</b> using the following code so they get loaded automatically the next time you restart.</li>
+
+<pre class="code-text-only" style="display: none;">
+<code>sudo nano /etc/modules</code>
+</pre>
+Below is the the contents of the file <b>/etc/modules/</b> with the two lines added.
+<pre class="code-text-only" style="display: none;">
+<code># /etc/modules: kernel modules to load at boot time.
+#
+# This file contains the names of kernel modules that should be loaded
+# at boot time, one per line. Lines beginning with "#" are ignored.
+# Parameters can be specified after the module name.
+
+snd-bcm2835
+<b>w1-gpio
+w1_therm</b>
+</code></pre>
+
 <li>Find your sensor: ls /sys/bus/w1/devices/ it should look like 28-00000393268a</li>
 <li>Test the sensor, by printing out it’s output: cat /sys/bus/w1/devices/28-00000393268a/w1_slave</li>
 </ol>
